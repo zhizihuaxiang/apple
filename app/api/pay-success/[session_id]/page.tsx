@@ -5,7 +5,7 @@ import Stripe from "stripe";
 
 export default async function ({ params }: { params: { session_id: string } }) {
   try {
-    handleOrderSession(params.session_id);
+    await handleOrderSession(params.session_id);
   } catch (e) {
     console.log("handle order session failed: ", e);
     throw e;
