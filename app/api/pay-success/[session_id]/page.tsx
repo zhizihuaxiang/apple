@@ -3,9 +3,9 @@ import { handleOrderSession } from "@/service/order";
 import { redirect } from "next/navigation";
 import Stripe from "stripe";
 
-export default async function ({ params }: { params: { session_id: string } }) {
+export default async function ({ params }: any) {
   try {
-    await handleOrderSession(params.session_id);
+    handleOrderSession(params.session_id);
   } catch (e) {
     console.log("handle order session failed: ", e);
     throw e;
